@@ -265,7 +265,7 @@
 <li>中文链接转拼音方式( <a href="https://github.com/viko16/hexo-permalink-pinyin" target="_blank" rel="noopener">hexo-permalink-pinyin</a>插件 ）</li>
 </ul>
 <h2 id="2-查看网站是否被收录"><a href="#2-查看网站是否被收录" class="headerlink" title="2 查看网站是否被收录"></a>2 查看网站是否被收录</h2><p>在搜索引擎中输入 <code>site:域名</code> ，查看站点是否被收录，可以看到站点没有被收录：</p>
-<p><img src="https://img-blog.csdnimg.cn/20200406143645384.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200505210520734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h2 id="3-添加站点至百度搜索资源平台"><a href="#3-添加站点至百度搜索资源平台" class="headerlink" title="3 添加站点至百度搜索资源平台"></a>3 添加站点至百度搜索资源平台</h2><h3 id="3-1-为什么要认证站点"><a href="#3-1-为什么要认证站点" class="headerlink" title="3.1 为什么要认证站点"></a>3.1 为什么要认证站点</h3><blockquote>
 <p>站长平台推荐站长添加主站（您网站的链接也许会使用 www 和非 www 两种网址，建议添加用户能够真实访问到的网址），添加并验证后，可证明您是该域名的拥有者，可以快捷批量添加子站点，查看所有子站数据，无需再一 一验证您的子站点。</p>
 </blockquote>
@@ -273,7 +273,7 @@
 <p>关于选择验证站点选择的协议上，有两点要说明：</p>
 <ul>
 <li><strong>如果你的站点购买了域名：</strong> 建议你先将站点实现<strong>全站HTTPS</strong>，再在百度站长平台中选择<strong>HTTPS协议</strong>认证。如若HTTPS认证始终没能通过，再选择认证HTTP协议。</li>
-<li><strong>如果你的站点是部署在 Github/Gitee 并没有购买域名：</strong> 因为 Github/Gitee 实现了<strong>强制HTTPS协议</strong>，你可能必须要在百度站长平台中选择<strong>HTTPS协议</strong>认证。如果选择的是<strong>HTTP协议</strong>认证，会出现<strong>验证失败</strong>的情况，并提示你将 http 的 url 301到 https 的url。关于这一点，我会在后面详细说明。</li>
+<li><strong>如果你的站点是部署在 Github/Gitee 并没有购买域名：</strong> 因为 Github/Gitee 实现了<strong>强制HTTPS协议</strong>，你可能必须要在百度站长平台中选择<strong>HTTPS协议</strong>认证。如果选择的是<strong>HTTP协议</strong>认证，会出现<strong>验证失败</strong>的情况，并提示你将 http 的 url 301到 https 的url。关于这一点，我会在后面说明。</li>
 </ul>
 </blockquote>
 <p>下文将以选择<strong>HTTP协议</strong>认证为例：</p>
@@ -305,7 +305,7 @@
 <p><img src="https://img-blog.csdnimg.cn/20200407103625734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p><strong>并提示你将 http 的 url 301到 https 的url：</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/20200407103759965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>关于301，大多数玩SEO的朋友都了解，在这里我们不再多说，但贴上百度站长平台的解释：</p>
+<p>关于301，大多数玩SEO的朋友都了解，在这里不多说，贴下百度站长平台的解释：</p>
 <blockquote>
 <ul>
 <li>HTTPS协议的站点信息更加安全，同时可降低网站被劫持的风险，如网站同时存在HTTP和HTTPS站点，可使用本工具进行认证，便于百度搜索识别网站。HTTP与HTTPS之间的对应关系，识别成功后，搜索端将及时展示网站HTTPS资源</li>
@@ -396,7 +396,7 @@
 <p> <img src="https://img-blog.csdnimg.cn/20200406183353205.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 </li>
 </ul>
-<p><strong>3.加入新的 <code>deployer</code>：</strong></p>
+<p><strong>3.在根目录 <code>_config.yml</code> 修改 <code>deployer</code>：</strong></p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span> 			<span class="comment">## 这是原来的deployer</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">  <span class="attr">branch:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">type:</span> <span class="string">baidu_url_submitter</span> 	<span class="comment">## 在这里添加新内容即可</span></span><br></pre></td></tr></table></figure>
 <p><strong>4.最后执行 <code>hexo g -d</code> 部署一遍即可实现主动推送，推送成功的标志是：在执行部署命令</strong>最后<strong>会显示类似如下代码</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"remain"</span>:2992,<span class="string">"success"</span>:7&#125;</span><br><span class="line">INFO  Deploy <span class="keyword">done</span>:  baidu_url_submitter</span><br></pre></td></tr></table></figure>
@@ -497,7 +497,9 @@
 <li>sitemap抓取结果（大概<strong>20天</strong>过后）：</li>
 </ul>
 <p><img src="https://img-blog.csdnimg.cn/20200503214311417.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="6-References"><a href="#6-References" class="headerlink" title="6 References"></a>6 References</h2><ul>
+<h2 id="6-收录结果查询"><a href="#6-收录结果查询" class="headerlink" title="6 收录结果查询"></a>6 收录结果查询</h2><p>输入 <code>site: 域名</code> ，查询：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200505211346803.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="7-References"><a href="#7-References" class="headerlink" title="7 References"></a>7 References</h2><ul>
 <li><a href="https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=1#02" target="_blank" rel="noopener">https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=1#02</a></li>
 <li><a href="https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=2#h2_article_title18" target="_blank" rel="noopener">https://ziyuan.baidu.com/college/courseinfo?id=267&amp;page=2#h2_article_title18</a></li>
 <li><a href="https://www.itrhx.com/2019/09/17/A48-submit-search-engine-inclusion/" target="_blank" rel="noopener">https://www.itrhx.com/2019/09/17/A48-submit-search-engine-inclusion/</a></li>
