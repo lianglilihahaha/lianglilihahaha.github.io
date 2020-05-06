@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Lili Liang">
+
+
+
+
+
+<title>PAT - 线上测试赛( 2020-05-01 ) - 题解 | Lili Liang</title>
+
+
+
+    <link rel="icon" href="/1.jpg">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Lili Liang &#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/category">分类</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Lili Liang &#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">归档</a>
+                
+                    <a class="menu-item" href="/category">分类</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?15996f0061886ef8292c939a628bb618";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <meta name="baidu-site-verification" content="JrgoM5Rn2Y" />
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
+        
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">PAT - 线上测试赛( 2020-05-01 ) - 题解</h1>
+            
+                <div class="post-meta">
+                    <!-- 
+                        作者 : <a itemprop="author" rel="author" href="/">Lili Liang</a>
+                     -->
+
+                    
+                        <span class="post-time">
+                        发表于 : <a href="#">May 6, 2020&nbsp;&nbsp;22:38:30</a>
+                        </span>
+                    
+
+                    
+                        <span class="post-category">
+                        &nbsp&nbsp分类于 : 
+                            
+                                <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                            
+                        </span>
+                    
+
+                    
+                        <span class="post-meta-item-text">  
+                            &nbsp&nbsp文章字数 : 
+                            <a href="#">
+                                1.6k
+                            </a>
+                            字
+                        </span>
+
+                        <span class="post-meta-item-text">  
+                            &nbsp&nbsp阅读时长 : 
+                            <a href="#">
+                                6
+                            </a>
+                            分钟
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="1-Knuth洗牌法-20分"><a href="#1-Knuth洗牌法-20分" class="headerlink" title="1 Knuth洗牌法 (20分)"></a>1 Knuth洗牌法 (20分)</h2><p><strong>题目描述</strong></p>
+<blockquote>
+<p>Knuth 洗牌法是生成 { 1, 2, …, n } 的一个随机重排列的算法。与每次反复随机生成一个数字，直到获得一个不重复的新数字的算法不同，Knuth 洗牌法从原始序列 { 1, 2, …, n } 开始，逐次洗牌。洗牌的方法是从左到右，每轮从没确定的数字中随机抽取一个数，把它放到确定的位置上。<br>例如令 n 等于 4。我们从 { 1, 2, 3, 4 } 开始。记 i 到 N 之间的随机抽牌数为 random(i,N)。假设我们生成的随机数序列 random(i,4) (i=1, 2, 3, 4) 为 { 2, 4, 3, 4 }。则 Knuth 洗牌法是这样执行的：</p>
+<ul>
+<li>random(1,4) = 2; 将位置 1 与位置 2 的数字交换，得到 { 2, 1, 3, 4 }</li>
+<li>random(2,4) = 4; 将位置 2 与位置 4 的数字交换，得到 { 2, 4, 3, 1 }</li>
+<li>random(3,4) = 3; 将位置 3 与位置 3 的数字交换，得到 { 2, 4, 3, 1 }</li>
+<li>random(4,4) = 4; 将位置 4 与位置 4 的数字交换，得到 { 2, 4, 3, 1 }<br>  现给定随机抽牌数字序列，请你输出 Knuth 洗牌法的结果序列。</li>
+</ul>
+</blockquote>
+<p><strong>输入格式</strong></p>
+<blockquote>
+<p>输入在第一行中给出一个正整数 N（≤ 1000）。随后一行给出 N 个随机抽牌数字，数字间以空格分隔。题目保证第 i 个数在 i 到 N 之间。</p>
+</blockquote>
+<p><strong>输出格式</strong></p>
+<blockquote>
+<p>在第一行中输出 Knuth 洗牌法的结果序列。数字间必须以 1 个空格分隔，行首尾不得有多余空格。</p>
+</blockquote>
+<p><strong>输入样例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">7 4 4 5 10 6 9 9 10 10</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出样例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7 4 2 5 10 6 9 1 3 8</span><br></pre></td></tr></table></figure></p>
+<p><strong>题解</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e3</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn] = &#123;<span class="number">0</span>&#125;, b[maxn] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"input.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        b[i] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> t1 = i, t2 = a[i];</span><br><span class="line">        <span class="keyword">int</span> temp = b[t1];</span><br><span class="line">        b[t1] = b[t2];</span><br><span class="line">        b[t2] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; b[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span> &lt;&lt; b[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-三阶幸福数-20分"><a href="#2-三阶幸福数-20分" class="headerlink" title="2 三阶幸福数 (20分)"></a>2 三阶幸福数 (20分)</h2><p><strong>题目描述</strong></p>
+<blockquote>
+<p>对一个十进制数的各位数字做一次立方和，称作一次迭代。如果一个十进制数能通过 h 次迭代得到 1，就称该数为三阶幸福数，迭代的次数 h 称为幸福度。例如 1579 经过 1 次迭代得到 1198，2 次迭代后得到 1243，3 次迭代后得到 100，最后得到 1。则 1579 是幸福数，其幸福度为 4。<br>另一方面，如果一个大于1的数字经过数次迭代后进入了死循环，那这个数就不幸福。例如 97 迭代得到 1072、352、160、217、352、…… 可见 352 到 217 形成了死循环，所以 97 就不幸福，而 352 就是它最早遇到的循环点。<br>本题就要求你编写程序，判断一个给定的数字是否有三阶幸福。</p>
+</blockquote>
+<p><strong>输入格式</strong></p>
+<blockquote>
+<p>输入在第一行给出一个不超过 100 的正整数 N，随后 N 行，每行给出一个不超过 $10^{4}$​​ 的正整数。</p>
+</blockquote>
+<p><strong>输出格式</strong></p>
+<blockquote>
+<p>对于每一个输入的数字，如果其是三阶幸福数，则在一行中输出它的幸福度；否则输出最早遇到的循环点。</p>
+</blockquote>
+<p><strong>输入样例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1579</span><br><span class="line">97</span><br><span class="line">1</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出样例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">352</span><br><span class="line">0</span><br></pre></td></tr></table></figure></p>
+<p><strong>题解</strong></p>
+<p>注意 $17$ 行，对 $st$ 清空操作。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">        freopen(<span class="string">"input.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num, ans = <span class="number">0</span>;</span><br><span class="line">        st.clear();</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line">        <span class="keyword">if</span>(num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">            st.insert(num);</span><br><span class="line">            <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(num) &#123;</span><br><span class="line">                sum += (num % <span class="number">10</span>) * (num % <span class="number">10</span>) * (num % <span class="number">10</span>);</span><br><span class="line">                num /= <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ans++;</span><br><span class="line">            <span class="keyword">if</span>(sum == <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(st.find(sum) != st.end()) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            num = sum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-垃圾分类-20分"><a href="#3-垃圾分类-20分" class="headerlink" title="3 垃圾分类 (20分)"></a>3 垃圾分类 (20分)</h2><p><strong>题目描述</strong></p>
+<blockquote>
+<p>据香港《南华早报》2019年7月15日文章，上海严格的垃圾分类新规令不少居民抓狂。这催生出大量帮助找出正确分类答案的App和小程序。目前仅微信上就至少有280种与垃圾处理有关的App，在苹果应用商店也达130种。支付宝表示，已有60多家独立App开发商申请为该平台提供类似服务。<br>本题就请你现场实现一个简单的垃圾分类小助手。</p>
+</blockquote>
+<p><strong>输入格式</strong></p>
+<blockquote>
+<p>输入首先给出官方分类指南中每种物品的归属。在一行中给出一个正整数 N（≤ $10​^5$​​），即物品数量；随后 N 行，每行给出一个物品名称（长度不超过 10 的、由小写英文字母和下划线组成的字符串）和该物品所属的分类（1 代表干垃圾、2 代表湿垃圾、3 代表可回收物、4 代表有害垃圾）。题目保证所有物品名称无重复。<br>随后每行给出一个查询物品的名称（格式与指南物品名称相同）。最后一行给出结束符<code>#</code>，表示查询终止，这一行不需要查询。</p>
+</blockquote>
+<p><strong>输出格式</strong></p>
+<blockquote>
+<p>对每个查询的物品，在一行中给出其所属分类：<code>Gan laji</code> 代表干垃圾；<code>Shi laji</code> 代表湿垃圾；<code>Ke Hui Shou</code> 代表可回收物；<code>You Hai laji</code> 代表有害垃圾。如果查询的物品不在指南中，则输出 <code>?</code> 表示不知道。</p>
+</blockquote>
+<p><strong>输入样例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">bao_zhi 3</span><br><span class="line">dian_chi 4</span><br><span class="line">dan_ke 2</span><br><span class="line">bei_ke 1</span><br><span class="line">dan_ke</span><br><span class="line">dian_chi</span><br><span class="line">ren_zha</span><br><span class="line">bao_zhi</span><br><span class="line">bei_ke</span><br><span class="line">#</span><br></pre></td></tr></table></figure></p>
+<p><strong>输出样例</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Shi laji</span><br><span class="line">You Hai laji</span><br><span class="line">?</span><br><span class="line">Ke Hui Shou</span><br><span class="line">Gan laji</span><br></pre></td></tr></table></figure></p>
+<p><strong>题解</strong></p>
+<p>注意 $23$ 行，存在多次输入时，用 $cin$ 会运行超时。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> chr[<span class="number">5</span>][<span class="number">20</span>] = &#123;<span class="string">"?"</span>, <span class="string">"Gan laji"</span>, <span class="string">"Shi laji"</span>,<span class="string">"Ke Hui Shou"</span>,<span class="string">"You Hai laji"</span>&#125;;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; mp;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">        freopen(<span class="string">"input.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> num;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; str &gt;&gt; num;</span><br><span class="line">        mp[str] = num;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    while((cin &gt;&gt; str) &amp;&amp; (str != "#"))&#123;</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%s"</span>, str) != EOF &amp;&amp; <span class="built_in">strcmp</span>(<span class="string">"#"</span>, str) != <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">puts</span>(chr[mp[str]]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200506222745137.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span style="font-size:17px"><strong>文章作者 : </span></strong>
+                        <span><strong><a href="/">Lili Liang</a></strong></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span style="font-size:17px"><strong>博文链接 : </span></strong>
+                        <strong><span><a href="https://ll_leung.gitee.io/2020/05/06/pat-test/">https://ll_leung.gitee.io/2020/05/06/pat-test/</a></span></strong>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span style="font-size:17px"><strong>版权声明 : </strong>
+                        本博客所有文章除特別声明外，均采用
+                        <strong><span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span></strong>
+                        许可协议。转载请注明来源
+                        <strong><a href="/">Lili Liang</a></strong> 。
+                    </p>
+                    <p></p>
+                
+                <!-- 
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                 -->
+                </section>
+        
+        <p></p>
+        <span style="font-size:20px"><strong>添加新评论</strong></span>
+        
+        <p></p>
+        <div id="vcomments" style="font-size:16px"></div>
+        <script>
+            new Valine({
+                el: '#vcomments',
+                appId: 'addRaUPaIYkQW4qXNOpRi99T-gzGzoHsz',
+                appKey: 'q82rU56Rz2oPbCQEtToDoVfj',
+                placeholder: '您可以选择匿名评论，即“昵称”,“邮箱”,“网址”均为非必填项。当然，也欢迎实名，且您的邮箱与网址将得到保密…',
+                visitor: true,
+                recordIP: true
+            })
+        </script>
+
+        <section class="post-tags">
+            <div>
+                <strong><span>文章标签 : </span></strong>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/PAT/"># PAT</a>
+                    
+                        <a href="/tags/C-C/"># C/C++</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <strong><a href="javascript:window.history.back();">返回上一页</a></strong>
+                <span><strong> · </strong></span>
+                <strong><a href="/">回到主页</a></strong>
+            </div>
+        </section>
+        
+        <section class="post-nav">
+            
+            
+                <a class="next" rel="next" href="/2020/04/28/algo-28/">【洛谷 1072 & 蓝桥杯 算法训练 ALGO - 37】Hankson的趣味题（数论）</a>
+            
+        </section>
+        
+    </article>
+    
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>Copyright © 2019 - 2020 
+            <strong>
+                <a href="/">Lili Liang</a></strong> | Powered by 
+            <strong>
+                <a href="https://hexo.io" target="_blank">Hexo</a>
+            </strong>
+                 | Theme <strong><a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a>
+            </strong>
+        </span>
+        <span id="sitetime"></span>
+        <script language=javascript>
+            function siteTime(){
+                window.setTimeout("siteTime()", 1000);
+                var seconds = 1000;
+                var minutes = seconds * 60;
+                var hours = minutes * 60;
+                var days = hours * 24;
+                var years = days * 365;
+                var today = new Date();
+                var todayYear = today.getFullYear();
+                var todayMonth = today.getMonth()+1;
+                var todayDate = today.getDate();
+                var todayHour = today.getHours();
+                var todayMinute = today.getMinutes();
+                var todaySecond = today.getSeconds();
+                /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                year - 作为date对象的年份，为4位年份值
+                month - 0-11之间的整数，做为date对象的月份
+                day - 1-31之间的整数，做为date对象的天数
+                hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                minutes - 0-59之间的整数，做为date对象的分钟数
+                seconds - 0-59之间的整数，做为date对象的秒数
+                microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+                var t1 = Date.UTC(2019,06,02,15,03,00); //建站时间
+                var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                var diff = t2-t1;
+                var diffYears = Math.floor(diff/years);
+                var diffDays = Math.floor((diff/days)-diffYears*365);
+                var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                document.getElementById("sitetime").innerHTML="&nbsp;| 本站已安全运行 "+ diffYears + " 年 " + diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+            }
+            siteTime();
+        </script>
+        <!-- {% if theme.baidu_analytics %} -->
+        <span style="display:none">
+            <script>
+                var _hmt = _hmt || [];
+                (function() {
+                  var hm = document.createElement("script");
+                  hm.src = "https://hm.baidu.com/hm.js?15996f0061886ef8292c939a628bb618";
+                  var s = document.getElementsByTagName("script")[0]; 
+                  s.parentNode.insertBefore(hm, s);
+                })();
+                </script>                
+        </span>
+        <!-- {% endif %} -->
+    </div>
+</footer>
+    
+
+    </div>
+</body>
+</html>
