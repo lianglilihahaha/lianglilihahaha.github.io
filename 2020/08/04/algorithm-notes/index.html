@@ -319,18 +319,17 @@
 </li>
 </ul>
 <h3 id="4-排序算法"><a href="#4-排序算法" class="headerlink" title="4 排序算法"></a>4 排序算法</h3><ul>
-<li>选择排序</li>
+<li><p>选择排序</p>
+<p>  <img src="https://img-blog.csdnimg.cn/20200806221659882.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
+<li><p>插入排序</p>
+<p>  <img src="https://img-blog.csdnimg.cn/20200806221733523.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20200806221659882.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
-<li>插入排序</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20200806221733523.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="5-进制转换"><a href="#5-进制转换" class="headerlink" title="5 进制转换"></a>5 进制转换</h3><ul>
-<li>$P$ 进制数 $x$ 转换为十进制数 $y$</li>
-</ul>
-<p><img src="https://img-blog.csdnimg.cn/20200806223537641.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<ul>
+<li><p>$P$ 进制数 $x$ 转换为十进制数 $y$</p>
+<p>  <img src="https://img-blog.csdnimg.cn/20200806223537641.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpYW5nbGxoYWhhaGE=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
 <li><p>十进制数 $y$ 转换为 $Q$ 进制数 $z$ （除基取余法）</p>
   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> z[<span class="number">40</span>], num = <span class="number">0</span>;    <span class="comment">//数组z存放Q进制数y的每一位，num为位数</span></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	z[num++] = y % Q;  <span class="comment">//除基取余</span></span><br><span class="line">	y /= Q;</span><br><span class="line">&#125;<span class="keyword">while</span>(y != <span class="number">0</span>);        <span class="comment">//当商不为0时进行循环</span></span><br></pre></td></tr></table></figure>
 <p>  $z$ 数组从高位 $z[num - 1]$ 到低位 $z[0]$ 即为 $Q$ 进制 $z$</p>
