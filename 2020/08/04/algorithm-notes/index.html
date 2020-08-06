@@ -266,7 +266,7 @@
                         <span class="post-meta-item-text">  
                             &nbsp&nbsp文章字数 : 
                             <a href="#">
-                                351
+                                350
                             </a>
                             字
                         </span>
@@ -284,8 +284,7 @@
         </header>
 
         <div class="post-content">
-            <p>@[TOC]</p>
-<h3 id="1-输入输出处理"><a href="#1-输入输出处理" class="headerlink" title="1 输入输出处理"></a>1 输入输出处理</h3><ul>
+            <h3 id="1-输入输出处理"><a href="#1-输入输出处理" class="headerlink" title="1 输入输出处理"></a>1 输入输出处理</h3><ul>
 <li>$scanf$ 函数<ul>
 <li>字符数组使用 <code>%s</code>读入时，以 <strong>空格</strong> 跟 <strong>换行</strong> 为读入结束标志</li>
 <li><code>%c</code> 格式可读入 <strong>空格</strong> 跟 <strong>换行</strong></li>
@@ -304,7 +303,8 @@
 </li>
 </ul>
 <h3 id="3-字符串"><a href="#3-字符串" class="headerlink" title="3 字符串"></a>3 字符串</h3><ul>
-<li>$sscanf$ 与 $sprintf$<ul>
+<li><p>$sscanf$ 与 $sprintf$</p>
+<ul>
 <li>假设定义一个 $char$  数组 $str[100]$<ul>
 <li>$sscanf$：<code>sscanf(str, &quot;%d&quot;, &amp;n);</code></li>
 <li>$sprintf$：<code>sprintf(str, &quot;%d&quot;, n;</code></li>
@@ -312,7 +312,8 @@
 </li>
 </ul>
 </li>
-<li>$strcmp$ 函数的返回值不一定是 $-1$ 或 $+1$（与编译器有关）<ul>
+<li><p>$strcmp$ 函数的返回值不一定是 $-1$ 或 $+1$（与编译器有关）</p>
+<ul>
 <li>类似 <code>return strcmp(a.name, b.name) == -1</code>（字典序小的排在前面）的写法是错误的</li>
 <li>正确写法：<code>return strcmp(a.name, b.name) &lt; 0</code></li>
 </ul>
