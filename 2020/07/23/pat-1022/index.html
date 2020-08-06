@@ -266,7 +266,7 @@
                         <span class="post-meta-item-text">  
                             &nbsp&nbsp文章字数 : 
                             <a href="#">
-                                892
+                                893
                             </a>
                             字
                         </span>
@@ -313,13 +313,13 @@
 <h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">1111111</span><br><span class="line">The Testing Book</span><br><span class="line">Yue Chen</span><br><span class="line">test code debug sort keywords</span><br><span class="line">ZUCS Print</span><br><span class="line">2011</span><br><span class="line">3333333</span><br><span class="line">Another Testing Book</span><br><span class="line">Yue Chen</span><br><span class="line">test code sort keywords</span><br><span class="line">ZUCS Print2</span><br><span class="line">2012</span><br><span class="line">2222222</span><br><span class="line">The Testing Book</span><br><span class="line">CYLL</span><br><span class="line">keywords debug book</span><br><span class="line">ZUCS Print2</span><br><span class="line">2011</span><br><span class="line">6</span><br><span class="line">1: The Testing Book</span><br><span class="line">2: Yue Chen</span><br><span class="line">3: keywords</span><br><span class="line">4: ZUCS Print</span><br><span class="line">5: 2011</span><br><span class="line">3: blablabla</span><br></pre></td></tr></table></figure>
 <h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1: The Testing Book</span><br><span class="line">1111111</span><br><span class="line">2222222</span><br><span class="line">2: Yue Chen</span><br><span class="line">1111111</span><br><span class="line">3333333</span><br><span class="line">3: keywords</span><br><span class="line">1111111</span><br><span class="line">2222222</span><br><span class="line">3333333</span><br><span class="line">4: ZUCS Print</span><br><span class="line">1111111</span><br><span class="line">5: 2011</span><br><span class="line">1111111</span><br><span class="line">2222222</span><br><span class="line">3: blablabla</span><br><span class="line">Not Found</span><br></pre></td></tr></table></figure>
 <h2 id="2-解题思路"><a href="#2-解题思路" class="headerlink" title="2 解题思路"></a>2 解题思路</h2><ul>
-<li><strong>题目大意</strong>：模拟数字图书馆的查询功能。会给出n本书的信息，以及m个需要查询的命令，数字标号对应相应的命令，数字编号后面的字符串是查询的搜索词，要求输出这行命令以及输出满足条件的书的 <code>id</code> ，如果一个都没有找到，输出 <code>Not Found</code>。</li>
+<li><strong>题目大意</strong>：模拟数字图书馆的查询功能。会给出 $n$ 本书的信息，以及 $m$ 个需要查询的命令，数字标号对应相应的命令，数字编号后面的字符串是查询的搜索词，要求输出这行命令以及输出满足条件的书的 <code>id</code> ，如果一个都没有找到，输出 <code>Not Found</code>。</li>
 <li><strong>解题技巧</strong>：<ul>
-<li>使用<code>map&lt; string, set&lt;int&gt; &gt;</code>对图书信息进行存储，<code>string</code>存储关键字信息，<code>set&lt;int&gt;</code>存储图书<code>id</code></li>
-<li>使用<code>getline(cin, ttitle)</code>快速处理多行出入数据</li>
-<li>对于关键词 <code>keywords</code>：未知关键词个数，可使用<code>while(cin &gt;&gt; tkry)</code>进行判断，当<code>getchar()为&#39;\n&#39;</code>时，则跳出循环</li>
+<li>使用<code>map&lt; string, set&lt;int&gt; &gt;</code>对图书信息进行存储，<code>string</code>存储关键字信息，<code>set&lt;int&gt;</code>存储图书 $id$</li>
+<li>使用<code>getline(cin, ttitle)</code>快速处理多行输入数据</li>
+<li>对于关键词 $keywords$ ：未知关键词个数，可使用<code>while(cin &gt;&gt; tkry)</code>进行判断，当<code>getchar()为&#39;\n&#39;</code>时，则跳出循环</li>
 <li>对于输入数据<code>1: The Testing Book</code>：可使用<code>scanf(&quot;%d: &quot;, &amp;num)</code>，对多余信息<code>:</code>进行过滤处理，以提取有效信息</li>
-<li>对于输入<code>7</code>位图书<code>id</code>：可使用<code>printf(&quot;%07d\n&quot;, *it)</code></li>
+<li>对于输入 $7$ 位图书 $id$ ：可使用<code>printf(&quot;%07d\n&quot;, *it)</code></li>
 </ul>
 </li>
 </ul>
