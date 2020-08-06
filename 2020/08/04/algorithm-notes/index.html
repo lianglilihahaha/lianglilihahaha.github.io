@@ -329,11 +329,11 @@
 <ul>
 <li><p>十进制数 $y$ 转换为 $Q$ 进制数 $z$ （除基取余法）</p>
   <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> z[<span class="number">40</span>], num = <span class="number">0</span>;    <span class="comment">//数组z存放Q进制数y的每一位，num为位数</span></span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">	z[num++] = y % Q;  <span class="comment">//除基取余</span></span><br><span class="line">	y /= Q;</span><br><span class="line">&#125;<span class="keyword">while</span>(y != <span class="number">0</span>);        <span class="comment">//当商不为0时进行循环</span></span><br></pre></td></tr></table></figure>
-<p>  $z$ 数组从高位 $z[num - 1]$ 到低位 $z[0]$ 即为 $Q$ 进制 $z$。</p>
+<p>  $z$ 数组从高位 $z[num - 1]$ 到低位 $z[0]$ 即为 $Q$ 进制 $z$</p>
 </li>
 </ul>
 <h3 id="6-其他"><a href="#6-其他" class="headerlink" title="6 其他"></a>6 其他</h3><ul>
-<li><p>闰年表示：<br><code>(year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400  == 0)</code></p>
+<li><p>闰年表示：<code>(year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400  == 0)</code></p>
 </li>
 <li><p>$ASCII$：小写字母的值比大写字母大 $32$</p>
 </li>
