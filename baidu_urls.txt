@@ -1,3 +1,5 @@
+https://ll_leung.gitee.io/2020/10/12/oj-1317/
+https://ll_leung.gitee.io/2020/10/12/oj-1455/
 https://ll_leung.gitee.io/2020/08/04/algorithm-notes/
 https://ll_leung.gitee.io/2020/07/23/pat-1022/
 https://ll_leung.gitee.io/2020/05/30/pat-1002-1009/
@@ -6,5 +8,3 @@ https://ll_leung.gitee.io/2020/05/27/pat-1004/
 https://ll_leung.gitee.io/2020/05/26/dijkstra-bellmanFord/
 https://ll_leung.gitee.io/2020/05/06/pat-test/
 https://ll_leung.gitee.io/2020/04/28/algo-28/
-https://ll_leung.gitee.io/2020/04/12/dp/
-https://ll_leung.gitee.io/2020/04/09/adv-299/
