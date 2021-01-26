@@ -1,3 +1,4 @@
+https://ll_leung.gitee.io/2021/01/26/mysql-navicat-install/
 https://ll_leung.gitee.io/2020/10/12/oj-1317/
 https://ll_leung.gitee.io/2020/10/12/oj-1455/
 https://ll_leung.gitee.io/2020/08/04/algorithm-notes/
@@ -7,4 +8,3 @@ https://ll_leung.gitee.io/2020/05/28/pat-1007/
 https://ll_leung.gitee.io/2020/05/27/pat-1004/
 https://ll_leung.gitee.io/2020/05/26/dijkstra-bellmanFord/
 https://ll_leung.gitee.io/2020/05/06/pat-test/
-https://ll_leung.gitee.io/2020/04/28/algo-28/

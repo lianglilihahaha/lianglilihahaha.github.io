@@ -12,7 +12,7 @@
 
 
 
-<title>【蓝桥杯 2017初赛 C/C++大学A组】迷宫（dfs模板） | Lili Liang</title>
+<title>Win10系统 MySQL &amp; Navicat Premium12 安装教程 | Lili Liang</title>
 
 
 
@@ -39,45 +39,6 @@
 
     
     
-        
-            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": {
-        preferredFont: "TeX",
-        availableFonts: ["STIX","TeX"],
-        linebreaks: { automatic:true },
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
-    },
-    tex2jax: {
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
-        processEscapes: true,
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
-        Macros: { href: "{}" }
-    },
-    messageStyle: "none"
-    });
-</script>
-<!-- 给MathJax元素添加has-jax class -->
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
-<script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
         
     
 
@@ -240,7 +201,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">【蓝桥杯 2017初赛 C/C++大学A组】迷宫（dfs模板）</h1>
+            <h1 class="post-title">Win10系统 MySQL &amp; Navicat Premium12 安装教程</h1>
             
                 <div class="post-meta">
                     <!-- 
@@ -249,7 +210,7 @@
 
                     
                         <span class="post-time">
-                        发表于 : <a href="#">Oct 12, 2020&nbsp;&nbsp;19:38:14</a>
+                        发表于 : <a href="#">Jan 26, 2021&nbsp;&nbsp;11:28:27</a>
                         </span>
                     
 
@@ -257,7 +218,7 @@
                         <span class="post-category">
                         &nbsp&nbsp分类于 : 
                             
-                                <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                                <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">后端开发</a>
                             
                         </span>
                     
@@ -266,7 +227,7 @@
                         <span class="post-meta-item-text">  
                             &nbsp&nbsp文章字数 : 
                             <a href="#">
-                                441
+                                720
                             </a>
                             字
                         </span>
@@ -284,14 +245,65 @@
         </header>
 
         <div class="post-content">
-            <p><strong>题目链接</strong>：<a href="http://oj.ecustacm.cn/problem.php?id=1317" target="_blank" rel="noopener">http://oj.ecustacm.cn/problem.php?id=1317</a></p>
-<h2 id="1-题目"><a href="#1-题目" class="headerlink" title="1 题目"></a>1 题目</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-<p>X星球的一处迷宫游乐场建在某个小山坡上。它是由10x10相互连通的小房间组成的。<br>房间的地板上写着一个很大的字母。我们假设玩家是面朝上坡的方向站立，则：<br>L表示走到左边的房间，R表示走到右边的房间，U表示走到上坡方向的房间，D表示走到下坡方向的房间。<br>X星球的居民有点懒，不愿意费力思考。他们更喜欢玩运气类的游戏。这个游戏也是如此！<br>开始的时候，直升机把100名玩家放入一个个小房间内。玩家一定要按照地上的字母移动。<br>迷宫地图如下：<br>UDDLUULRUL<br>UURLLLRRRU<br>RRUURLDLRD<br>RUDDDDUUUU<br>URUDLLRRUU<br>DURLRLDLRL<br>ULLURLLRDU<br>RDLULLRDDD<br>UUDDUDUDLL<br>ULRDLUURRR<br>请你计算一下，最后，有多少玩家会走出迷宫? 而不是在里边兜圈子。</p>
-</blockquote>
-<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><blockquote>
-<p>输出一个整数表示答案</p>
-</blockquote>
-<h2 id="2-题解"><a href="#2-题解" class="headerlink" title="2 题解"></a>2 题解</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &lt; <span class="number">0</span> || j &lt; <span class="number">0</span> || i &gt; <span class="number">9</span> || j &gt; <span class="number">9</span>)&#123;</span><br><span class="line">        ans++;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i][j])&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        vis[i][j] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(c[i][j] == <span class="string">'U'</span>)&#123;</span><br><span class="line">            dfs(i - <span class="number">1</span>, j);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c[i][j] == <span class="string">'D'</span>)&#123;</span><br><span class="line">            dfs(i + <span class="number">1</span>, j);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c[i][j] == <span class="string">'L'</span>)&#123;</span><br><span class="line">            dfs(i, j - <span class="number">1</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(c[i][j] == <span class="string">'R'</span>)&#123;</span><br><span class="line">            dfs(i, j + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> ONLINE_JUDGE</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    freopen(<span class="string">"input.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="number">10</span>;j++)&#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; c[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="number">10</span>;j++)&#123;</span><br><span class="line">            <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">            dfs(i, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="1-MySQL的下载与安装"><a href="#1-MySQL的下载与安装" class="headerlink" title="1 MySQL的下载与安装"></a>1 MySQL的下载与安装</h2><h3 id="1-1-进入MySQL官网"><a href="#1-1-进入MySQL官网" class="headerlink" title="1.1 进入MySQL官网"></a>1.1 进入MySQL官网</h3><p>官网链接：<a href="https://dev.mysql.com/downloads/mysql" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-1.png" alt="mysql-navicat-install-1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-2.png" alt="mysql-navicat-install-2"></p>
+<h3 id="1-2-MySQL安装及环境变量配置"><a href="#1-2-MySQL安装及环境变量配置" class="headerlink" title="1.2 MySQL安装及环境变量配置"></a>1.2 MySQL安装及环境变量配置</h3><p><strong>1.从官网下载完毕后，并解压zip安装包，安装包结构如图所示：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-3.png" alt="mysql-navicat-install-3"></p>
+<p><strong>2.配置环境变量：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-4.png" alt="mysql-navicat-install-4"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-5.png" alt="mysql-navicat-install-5"></p>
+<p><strong>3.配置初始化的my.ini文件</strong></p>
+<p>发现解压后的目录并没有 my.ini 文件，没关系可以自行创建。在安装包的<strong>根目录</strong>下添加 my.ini（新建文本文件，将文件类型改为 .ini ），写入基本配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port&#x3D;3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;D:\\Program Files\\mysql-8.0.15-winx64  </span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir&#x3D;D:\\Program Files\\mysql-8.0.15-winx64\\Data  </span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections&#x3D;200</span><br><span class="line"># 允许连接失败的次数。这是为了防止有人从该主机试图攻击数据库系统</span><br><span class="line">max_connect_errors&#x3D;10</span><br><span class="line"># 服务端使用的字符集默认为UTF8</span><br><span class="line">character-set-server&#x3D;utf8</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"># 默认使用“mysql_native_password”插件认证</span><br><span class="line">default_authentication_plugin&#x3D;mysql_native_password</span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set&#x3D;utf8</span><br><span class="line">[client]</span><br><span class="line"># 设置mysql客户端连接服务端时默认使用的端口</span><br><span class="line">port&#x3D;3306</span><br><span class="line">default-character-set&#x3D;utf8</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-6.png" alt="mysql-navicat-install-6"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-7.png" alt="mysql-navicat-install-7"></p>
+<h3 id="1-3-启动MySQL服务"><a href="#1-3-启动MySQL服务" class="headerlink" title="1.3 启动MySQL服务"></a>1.3 启动MySQL服务</h3><p><strong>1.以管理员身份运行cmd（否则在安装时会报错，会导致安装失败的情况）</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-8.png" alt="mysql-navicat-install-8"></p>
+<p><strong>2.命令行进入mysql安装包的bin文件：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd&#x2F;d D:\Program Files\mysql-8.0.15-winx64\bin</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-9.png" alt="mysql-navicat-install-9"></p>
+<p><strong>3.初始化数据库：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-10.png" alt="mysql-navicat-install-10"></p>
+<p>执行完成后，会打印 <strong>root 用户的初始默认密码</strong>（即 mysql 密码），例如我的：</p>
+<p><strong>注意</strong>：一定要记住 mysql 的初始密码，以便之后 navicat 连接 mysql 输入密码（及修改密码）用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-11.png" alt="mysql-navicat-install-11"></p>
+<p><strong>3.安装服务：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --install [服务名]</span><br></pre></td></tr></table></figure>
+<p>后面的服务名可以不写，默认的名字为 mysql 。当然，如果你的电脑上需要安装多个 MySQL 服务，就可以用不同的名字区分，比如 mysql5 和 mysql8 。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-12.png" alt="mysql-navicat-install-12"></p>
+<p><strong>4.启动服务：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-13.png" alt="mysql-navicat-install-13"></p>
+<h2 id="2-Navicat安装"><a href="#2-Navicat安装" class="headerlink" title="2 Navicat安装"></a>2 Navicat安装</h2><h3 id="2-1-安装包下载"><a href="#2-1-安装包下载" class="headerlink" title="2.1 安装包下载"></a>2.1 安装包下载</h3><p><strong>链接</strong>：<a href="https://pan.baidu.com/s/1t8QxfnEhrcvYZPYOSLbw-A" target="_blank" rel="noopener">https://pan.baidu.com/s/1t8QxfnEhrcvYZPYOSLbw-A</a> 提取码：h18n （链接失效可联系我）</p>
+<h3 id="2-2-Navicat安装"><a href="#2-2-Navicat安装" class="headerlink" title="2.2 Navicat安装"></a>2.2 Navicat安装</h3><p><strong>1.解压安装包后，点击exe文件安装：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-14.png" alt="mysql-navicat-install-14"></p>
+<p><strong>2.选择安装路径后，一路next即可：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-15.png" alt="mysql-navicat-install-15"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-16.png" alt="mysql-navicat-install-16"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-17.png" alt="mysql-navicat-install-17"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-18.png" alt="mysql-navicat-install-18"></p>
+<h3 id="2-3-文件夹解压"><a href="#2-3-文件夹解压" class="headerlink" title="2.3 文件夹解压"></a>2.3 文件夹解压</h3><p><strong>1.解压文件：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-19.png" alt="mysql-navicat-install-19"></p>
+<p><strong>2.将该“简体中文64位”目录下的两个文件拷贝至navicat安装目录的根目录：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-20.png" alt="mysql-navicat-install-20"></p>
+<p><strong>3.打开navicat，可以看到已经安装成功</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-21.png" alt="mysql-navicat-install-21"></p>
+<p><strong>注：采用此安装方式，不建议升级更新 Navicat Premium</strong></p>
+<h2 id="3-Navicat连接MySQL"><a href="#3-Navicat连接MySQL" class="headerlink" title="3 Navicat连接MySQL"></a>3 Navicat连接MySQL</h2><h3 id="3-1-连接localhost"><a href="#3-1-连接localhost" class="headerlink" title="3.1 连接localhost"></a>3.1 连接localhost</h3><p><strong>1.建立连接：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-22.png" alt="mysql-navicat-install-22"></p>
+<p><strong>2.输入密码（初始密码）：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-23.png" alt="mysql-navicat-install-23"></p>
+<p><strong>3.连接成功：</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-24.png" alt="mysql-navicat-install-24"></p>
+<h3 id="3-2-修改MySQL密码"><a href="#3-2-修改MySQL密码" class="headerlink" title="3.2 修改MySQL密码"></a>3.2 修改MySQL密码</h3><p><strong>1.点击“用户”，选择账号”root@localhost”</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-25.png" alt="mysql-navicat-install-25"></p>
+<p><strong>2.修改密码</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/leungll/ImgHosting/img/mysql-navicat-install-26.png" alt="mysql-navicat-install-26"></p>
+<p>保存即可</p>
+<p>OK，至此 MySQL 与 Navicat Premium12 均已安装完毕，欢迎留言讨论！</p>
+
         </div>
 
         
@@ -305,7 +317,7 @@
                 
                     <p class="copyright-item">
                         <span style="font-size:17px"><strong>博文链接 : </span></strong>
-                        <strong><span><a href="https://ll_leung.gitee.io/2020/10/12/oj-1317/">https://ll_leung.gitee.io/2020/10/12/oj-1317/</a></span></strong>
+                        <strong><span><a href="https://ll_leung.gitee.io/2021/01/26/mysql-navicat-install/">https://ll_leung.gitee.io/2021/01/26/mysql-navicat-install/</a></span></strong>
                     </p>
                 
                 
@@ -348,13 +360,13 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/C-C/"># C/C++</a>
+                        <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/"># 后端开发</a>
                     
-                        <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/"># 蓝桥杯</a>
+                        <a href="/tags/Configuration/"># Configuration</a>
                     
-                        <a href="/tags/bfs/"># bfs</a>
+                        <a href="/tags/Navicat-Premium-12/"># Navicat Premium 12</a>
                     
-                        <a href="/tags/%E8%BF%B7%E5%AE%AB/"># 迷宫</a>
+                        <a href="/tags/MySQL/"># MySQL</a>
                     
                         
                 </span>
@@ -368,10 +380,8 @@
         
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2021/01/26/mysql-navicat-install/">Win10系统 MySQL & Navicat Premium12 安装教程</a>
             
-            
-                <a class="next" rel="next" href="/2020/10/12/oj-1455/">【蓝桥杯 2019初赛 C/C++大学A组】迷宫（bfs模板）</a>
+                <a class="next" rel="next" href="/2020/10/12/oj-1317/">【蓝桥杯 2017初赛 C/C++大学A组】迷宫（dfs模板）</a>
             
         </section>
         
